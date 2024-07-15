@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:21.0.1-jdk-slim
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar tambo.jar
-EXPOSE 9080
+COPY --from=build /target/tambo-0.0.1-SNAPSHOT.jakarta tambo.jakarta
+EXPOSE 8080
 ENTRYPOINT ["java","-jar","tambo.jar"]
